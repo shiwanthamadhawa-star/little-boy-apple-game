@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#18392f" />
+    <title>Little Boy & Monkey Apple Challenge</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div>
+          <h1>🍎 Apple Rush 3D</h1>
+          <p>Collect good apples. Feed wormy apples to monkeys.</p>
+        </div>
+        <div class="room-tools">
+          <input id="nickname" maxlength="18" placeholder="Your nickname" value="Player" aria-label="Nickname" />
+          <button id="create-room">Create room</button>
+          <input id="room-code" maxlength="8" placeholder="Room code" aria-label="Room code" />
+          <button id="join-room">Join room</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="game-panel" aria-label="3D game">
+          <div id="game-canvas"></div>
+          <div class="hud">
+            <div class="hud-card"><span>Room</span><strong id="room-label">—</strong></div>
+            <div class="hud-card"><span>Level</span><strong id="level-label">—</strong></div>
+            <div class="hud-card"><span>Time</span><strong id="timer-label">02:00</strong></div>
+            <div class="hud-card"><span>Score</span><strong id="score-label">0</strong></div>
+            <div class="hud-card"><span>Bag</span><strong id="bag-label">0/6</strong></div>
+          </div>
+          <div class="controls">
+            <button id="left-button" aria-label="Move left">◀ Left</button>
+            <button id="throw-button">Throw selected 🐛🍎</button>
+            <button id="right-button" aria-label="Move right">Right ▶</button>
+          </div>
+          <p id="status" role="status">Create a room or join with a room code to begin.</p>
+        </section>
+
+        <aside class="sidebar">
+          <h2>Live leaderboard</h2>
+          <ol id="leaderboard"><li>Join a room to see players.</li></ol>
+          <hr />
+          <h2>Bag contents</h2>
+          <p class="hint">Select a slot with keys 1–6, then throw a wormy apple at the monkey.</p>
+          <ol id="bag-list"><li>Empty</li></ol>
+          <p class="hint">🐛 on an apple means it is wormy. Keep wormy apples out of your bag to avoid the per-second penalty.</p>
+        </aside>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

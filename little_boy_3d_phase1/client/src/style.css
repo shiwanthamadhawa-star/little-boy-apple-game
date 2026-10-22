@@ -1,0 +1,46 @@
+* { box-sizing: border-box; }
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #10231f; color: #f5f7f4; }
+body { margin: 0; min-width: 320px; background: radial-gradient(circle at top, #285143, #10231f 60%); }
+button, input { font: inherit; border-radius: 10px; border: 1px solid #45665a; padding: .65rem .8rem; }
+button { background: #e9b949; color: #19251f; font-weight: 750; cursor: pointer; }
+button:hover { filter: brightness(1.08); }
+button:disabled { opacity: .55; cursor: not-allowed; }
+input { background: #10231f; color: #f5f7f4; width: 135px; }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: .25rem; font-size: clamp(1.25rem, 2vw, 1.8rem); }
+h2 { font-size: 1.05rem; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid #355348; background: #112820dd; }
+.topbar p { margin: 0; color: #c0d4ca; font-size: .9rem; }
+.room-tools { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 1rem; padding: 1rem; max-width: 1600px; margin: auto; }
+.game-panel { min-width: 0; position: relative; }
+#game-canvas { height: min(68vh, 700px); min-height: 380px; border-radius: 16px; overflow: hidden; border: 1px solid #416457; background: #a8d7e8; }
+#game-canvas canvas { display: block; width: 100%; height: 100%; }
+.hud { position: absolute; top: .75rem; left: .75rem; right: .75rem; display: flex; gap: .5rem; flex-wrap: wrap; pointer-events: none; }
+.hud-card { min-width: 76px; padding: .45rem .65rem; border: 1px solid #ffffff30; border-radius: 10px; background: #10231fdc; display: flex; flex-direction: column; gap: .1rem; }
+.hud-card span { color: #c4d6ce; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; }
+.hud-card strong { font-size: 1rem; }
+.controls { display: flex; gap: .5rem; margin-top: .65rem; }
+.controls button { flex: 1; }
+#status { color: #d0e2d9; font-size: .9rem; margin: .65rem .1rem; min-height: 1.2rem; }
+.sidebar { background: #18372d; border: 1px solid #35594b; border-radius: 16px; padding: 1rem; min-width: 0; }
+.sidebar ol { padding-left: 1.4rem; }
+.sidebar li { padding: .25rem 0; overflow-wrap: anywhere; }
+.hint { color: #bed2c8; font-size: .82rem; line-height: 1.45; }
+hr { border: 0; border-top: 1px solid #416457; margin: 1rem 0; }
+@media (max-width: 900px) {
+  .topbar { align-items: flex-start; flex-direction: column; }
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { order: 2; }
+  #game-canvas { height: 58vh; min-height: 340px; }
+}
+@media (max-width: 500px) {
+  .room-tools { width: 100%; }
+  .room-tools input { flex: 1 1 110px; min-width: 0; }
+  .room-tools button { flex: 1 1 auto; }
+  .layout { padding: .5rem; }
+  .hud-card { min-width: 62px; padding: .35rem .45rem; }
+  .hud-card strong { font-size: .9rem; }
+  .controls { flex-wrap: wrap; }
+  .controls button { min-width: 28%; }
+}
